@@ -13,11 +13,12 @@ class productsadminServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if ($this->app->routesAreCached()) {
-            return __DIR__.'/routes.php';
+        if (!$this->app->routesAreCached()) {
+            require __DIR__.'/routes.php';
         }
-        $this->loadViewsFrom(base_path('resources/views'), 'productadmin');
-        
+
+        $this->loadViewsFrom(base_path('resources/views'), 'productsadmin');
+
         $this->publishes([
             __DIR__.'/views' => base_path('resources/views'),
             __DIR__.'/migrations' => database_path('migrations')
