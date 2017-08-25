@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Products List</title>
+    <title>Productsadmin</title>
 </head>
 <body>
     <ul>
         @foreach ($products as $product)
-            <li style="background: yellow; color: black;">{{$product->name}}: {{$product->price}}</li>
+            <li>{{$product->name}} :: {{$product->price}}
+            </li>
         @endforeach
     </ul>
 </body>

@@ -1,10 +1,10 @@
 <?php
 
-namespace xudong7930\productadmin;
+namespace xudong7930\productsadmin;
 
 use Illuminate\Support\ServiceProvider;
 
-class productadminServiceProvider extends ServiceProvider
+class productsadminServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
@@ -16,13 +16,10 @@ class productadminServiceProvider extends ServiceProvider
         if ($this->app->routesAreCached()) {
             return __DIR__.'/routes.php';
         }
-
         $this->loadViewsFrom(base_path('resources/views'), 'productadmin');
-
         $this->publishes([
             __DIR__.'/views' => base_path('resources/views')
         ]);
-
         $this->publishes([
             __DIR__.'/migrations' => database_path('databases/migrations')
         ], 'migrations');
