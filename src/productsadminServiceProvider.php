@@ -17,12 +17,11 @@ class productsadminServiceProvider extends ServiceProvider
             return __DIR__.'/routes.php';
         }
         $this->loadViewsFrom(base_path('resources/views'), 'productadmin');
+        
         $this->publishes([
-            __DIR__.'/views' => base_path('resources/views')
+            __DIR__.'/views' => base_path('resources/views'),
+            __DIR__.'/migrations' => database_path('migrations')
         ]);
-        $this->publishes([
-            __DIR__.'/migrations' => database_path('databases/migrations')
-        ], 'migrations');
     }
 
     /**
